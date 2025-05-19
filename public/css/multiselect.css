@@ -1,0 +1,64 @@
+
+.multi-select-container {
+    -border: 1px solid #ccc;
+    -padding: 10px;
+    -border-radius: 5px;
+    -width: 300px;
+    position: relative;
+}
+
+.toogle-div{
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    z-index: 10;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    width: max-content;
+}
+
+.search-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.options-container {
+    max-height: 200px;
+    overflow-y: auto;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    text-align:left;
+    color:black;
+}
+
+.option-label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.option-label-all {
+    border-bottom: 1px solid #ccc;
+    padding-bottom:2px;
+}
+
+.option-group {
+    margin-top: 10px;
+}
+
+.group-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-select.multiple-select{
+    height: calc(24.5px + .75rem);
+}
+
+.multiple-select > span {
+    display: inline-block;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: clip;
+}
