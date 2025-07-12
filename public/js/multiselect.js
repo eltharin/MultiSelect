@@ -80,6 +80,32 @@ class MultiSelect {
             this.createCheckAll();
         }
 
+        this.createSelectValues();
+
+        this.toogleDiv.appendChild(this.optionsContainer);
+        this.container.appendChild(this.toogleDiv);
+
+        this.selectElement.parentNode.insertBefore(this.container, this.selectElement.nextSibling);
+
+        //-- masquer toogle si click outside
+        document.addEventListener('click', (event) => {
+            if(!this.container.contains(event.target)) {
+                this.toogleDiv.style.display = "none";
+            }
+        });
+
+        // Synchro select
+        this.updateSelectElement();
+    }
+
+    updateSelectValues() {
+
+        this.updateSelectElement();
+        this.optionsContainer.replaceChildren();
+        this.createSelectValues();
+    }
+
+    createSelectValues() {
         Array.from(this.selectElement.children).forEach(child => {
             if (child.tagName === "OPTGROUP") {
                 // Gérer les groupes d'options
@@ -104,21 +130,6 @@ class MultiSelect {
                 this.optionsContainer.appendChild(checkbox);
             }
         });
-
-        this.toogleDiv.appendChild(this.optionsContainer);
-        this.container.appendChild(this.toogleDiv);
-
-        this.selectElement.parentNode.insertBefore(this.container, this.selectElement.nextSibling);
-
-        //-- masquer toogle si click outside
-        document.addEventListener('click', (event) => {
-            if(!this.container.contains(event.target)) {
-                this.toogleDiv.style.display = "none";
-            }
-        });
-
-        // Synchro select
-        this.updateSelectElement();
     }
 
     createCheckbox(option) {
